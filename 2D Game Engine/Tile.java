@@ -1,18 +1,17 @@
-/*  
- * Execution: N/A. Is the engine's atomic object; utilized in creating the
- *            Tileboard object.
- *            
- * 
- * Description: File containing the object: "Tile". Contains various
- * fields and methods pertaining to the characteristics of a Tile.
- * 
- * 
- */
+/*************************************************************************
+  *  Compilation:  javac Tile.java
+  *  Execution:    java Tile
+  *
+  *  2D Game Engine's primary atomic object, utilized in the creation of
+  *  TileBoard instances.
+  * 
+  *  Version 1.01
+  *************************************************************************/
 public class Tile {
-  public String image;
-  public boolean hasPlayer;
-  public boolean hasEnemy;
-  public boolean passable;
+  private String image;
+  private boolean hasPlayer;
+  private boolean hasEnemy;
+  private boolean passable;
   
   public Tile(String img, boolean hasPlayer, boolean hasEnemy, boolean passable)  {
     this.image = img;
@@ -21,25 +20,63 @@ public class Tile {
     this.passable = passable;
   }
   
-  /*
-   * Description: Populates an entire TileBoard with a single image and default fields       
-   *              
-   * Input: A string; the filename of the image the board will be populated with.
-   *        
-   * Output: None.
-   */ 
-  public void changeImage(String img) {
+  /**
+   * Retrieves the given tile's image name.
+   */
+  public String getImage() {
+    return this.image;
+  }
+  
+  /**
+   * Sets the given tile's image to the inputted image name.
+   * @param img, the filename of the image the tile's image will be set to
+   */
+  public void setImage(String img) {
     this.image = img;
   }
   
-  /*
-   * Description: Changes whether a tile is passable.     
-   *              
-   * Input: A boolean; the desired truth value of the tile's passability.
-   *        
-   * Output: None.
-   */ 
-  public void changePassability(boolean passable) {
+  /**
+   * Retrieves whether or not tile has a player on it.
+   */
+  public boolean getHasPlayer() {
+    return this.hasPlayer;
+  }
+  
+  /**
+   * Changes whether a tile has a player on it.
+   * @param hasPlayer, whether or not tile has a player on it
+   */
+  public void setHasPlayer(boolean hasPlayer) {
+    this.hasPlayer = hasPlayer;
+  }
+  
+  /**
+   * Retrieves whether or not tile has an enemy on it.
+   */
+  public boolean getHasEnemy() {
+    return this.hasEnemy;
+  }
+  
+  /**
+   * Changes whether a tile has an enemy on it.
+   * @param hasEnemy, whether or not tile has an enemy on it
+   */
+  public void setHasEnemy(boolean hasEnemy) {
+    this.hasEnemy = hasEnemy;
+  }
+  
+  /**
+   * Retrieves the given tile's image name.
+   */
+  public boolean getPassable() {
+    return this.passable;
+  }
+  
+  /**
+   * Changes whether a tile is passable.
+   * @param passable, whether or not tile is passable
+   */
+  public void setPassable(boolean passable) {
     this.passable = passable;
   }
 }
